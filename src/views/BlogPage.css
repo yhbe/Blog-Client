@@ -1,0 +1,32 @@
+.blog-page-main-container{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.blog-container{
+  display: flex;
+  flex-direction: column;
+  flex: 3;
+  text-align: center;
+  box-shadow: 1px 1px 5px rgb(0, 0, 0);
+}
+
+.blog-title{
+  font-size: 5rem;
+}
+
+.blog-author{
+  font-size: 2rem;
+}
+
+.blog-body{
+  max-width: 400px;
+  margin: 40px auto;
+  text-align: left;
+  font-size: 1rem;
+}
+
+.blog-comment-section{
+  flex: 1;
+}

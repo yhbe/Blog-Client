@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import BlogPage from './views/BlogPage';
 import Homepage from "./views/Homepage";
 
 function RouterSwitch() {
@@ -25,11 +26,12 @@ function RouterSwitch() {
   
   return (
     <BrowserRouter>
-    <Routes>
-      <Route path='/' element={<Homepage allBlogs={allBlogs}/>}/>
-    </Routes>
+      <Routes>
+        <Route path="/" element={<Homepage allBlogs={allBlogs} />} />
+        <Route path="/:id" element={<BlogPage allBlogs={allBlogs} />} />
+      </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
 export default RouterSwitch
