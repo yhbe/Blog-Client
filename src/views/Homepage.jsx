@@ -1,7 +1,10 @@
 import React from 'react';
+import createHomepageBlogJSX from '../helper/createHomepageBlogJSX';
 import "./Homepage.css";
 
-function Homepage() {
+function Homepage({allBlogs}) {
+  const blogJSX = allBlogs?.map((blog) => createHomepageBlogJSX(blog)) || null;
+  
   return (
     <div className="page-container">
       <header className="homepage-header homepage-padding">
@@ -15,26 +18,7 @@ function Homepage() {
         </p>
       </section>
       <main className="homepage-main-container">
-        <article className="homepage-article">
-          <div className="article-top-half">
-            <h1 className="article-title">How to make pizza</h1>
-            <p className="article-title-supporting-text">by Alan Walker</p>
-          </div>
-          <div className="article-bottom-half">
-            <p className="article-published-date">16 March 2021</p>
-            <button className="view-article-button">View Post</button>
-          </div>
-        </article>
-        <article className="homepage-article">
-          <div className="article-top-half">
-            <h1 className="article-title">How to make pizza</h1>
-            <p className="article-title-supporting-text">by Alan Walker</p>
-          </div>
-          <div className="article-bottom-half">
-            <p className="article-published-date">16 March 2021</p>
-            <button className="view-article-button">View Post</button>
-          </div>
-        </article>
+        {blogJSX}
       </main>
     </div>
   );
