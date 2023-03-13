@@ -67,4 +67,13 @@
   border-radius: 5px;
   color: white;
   background-color: black;
+  cursor: pointer;
+}
+
+.fa-arrow-left{
+  position: absolute;
+  top: 40px;
+  left: 30px;
+  font-size: 4rem;
+  cursor: pointer;
 }
