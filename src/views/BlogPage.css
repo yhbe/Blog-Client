@@ -6,6 +6,7 @@
 
 .blog-container{
   display: flex;
+  justify-content: space-evenly;
   flex-direction: column;
   flex: 3;
   text-align: center;
@@ -29,4 +30,40 @@
 
 .blog-comment-section{
   flex: 1;
+}
+
+.comments-container{
+  overflow: scroll;
+  min-height: 150px;
+  height: 100%;
+}
+
+.comment-container{
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  box-shadow: 1px 1px black;
+  gap: 20px;
+}
+
+.form-add-comment{
+  display: flex;
+  min-height: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-add-comment-input{
+  border: none;
+  font-size: 1.3rem;
+  text-indent: 5px;
+}
+
+.form-add-comment-button{
+  border: none;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  color: white;
+  background-color: black;
 }
