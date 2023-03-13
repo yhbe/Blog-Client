@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import "./BlogPage.css";
 
-function BlogPage({ allBlogs }) {
+function BlogPage({ allBlogs, port, refreshPage }) {
   const { id } = useParams();
 
   const blog = allBlogs?.find(blog => blog._id === id) || null
@@ -20,6 +20,35 @@ function BlogPage({ allBlogs }) {
   
   const commentJSX = blog?.comments.map(comment => createCommentJSX(comment)) || null
 
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    const form = event.target
+    const formData = {
+      author: "Anonymous",
+      text: form.addComment.value,
+    };
+    
+    try {
+      const response = await fetch(`${port}/blogs/${id}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      })
+
+      if (response.ok) {
+        form.addComment.value = ""
+        refreshPage()
+      } else {
+        throw new Error("Failed to add comment")
+      }
+    } catch (error){
+      console.log(error)
+    }
+
+  }
+
   return (
     <main className='blog-page-main-container'>
       {!blog && <h1>Blog not found</h1>}
@@ -36,7 +65,7 @@ function BlogPage({ allBlogs }) {
         {commentJSX}
         </div>
       </div>
-        <form className='form-add-comment' action="">
+        <form onSubmit={(event) => handleSubmit(event)} className='form-add-comment' action="">
         <label htmlFor="addComment"></label>
         <input className='form-add-comment-input'  type="text" name="addComment" id="addComment" placeholder='Add a comment'/>
         <button type='submit' className='form-add-comment-button'>Add Comment</button>
