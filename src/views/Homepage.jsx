@@ -25,7 +25,8 @@ function Homepage({allBlogs}) {
           publications, and experts from around the globe. Everyone's welcome.
         </p>
       </section>
-      <main className="homepage-main-container">
+      <main className="homepage-main-container homepage-padding">
+        {!blogJSX && <h1>Loading Blogs...</h1>}
         {blogJSX}
       </main>
     </div>
