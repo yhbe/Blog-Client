@@ -1,6 +1,6 @@
 import React from 'react';
 
-function createHomepageBlogJSX(blog) {
+function createHomepageBlogJSX(blog, handleNavigation) {
   return (
     <article key={blog._id} className="homepage-article">
       <div className="article-top-half">
@@ -9,7 +9,7 @@ function createHomepageBlogJSX(blog) {
       </div>
       <div className="article-bottom-half">
         <p className="article-published-date">16 March 2023</p>
-        <button className="view-article-button">View Post</button>
+        <button onClick={() => handleNavigation(blog._id)} className="view-article-button">View Post</button>
       </div>
     </article>
   );

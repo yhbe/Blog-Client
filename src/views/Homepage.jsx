@@ -1,9 +1,17 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import createHomepageBlogJSX from '../helper/createHomepageBlogJSX';
 import "./Homepage.css";
 
 function Homepage({allBlogs}) {
-  const blogJSX = allBlogs?.map((blog) => createHomepageBlogJSX(blog)) || null;
+  const navigate = useNavigate()
+  
+  const handleViewBlogClick = (id) => {
+    navigate(`/${id}`)
+  }
+  
+  const blogJSX = allBlogs?.map((blog) => createHomepageBlogJSX(blog, handleViewBlogClick)) || null;
+
   
   return (
     <div className="page-container">
