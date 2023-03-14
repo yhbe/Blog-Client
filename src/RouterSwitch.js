@@ -44,8 +44,17 @@ function RouterSwitch() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Homepage allBlogs={allBlogs} />} />
-        <Route path="/:id" element={<BlogPage allBlogs={allBlogs} port={port} refreshPage={refreshPage}/>} />
+        <Route path="/Blog-Client" element={<Homepage allBlogs={allBlogs} />} />
+        <Route
+          path="/Blog-Client/:id"
+          element={
+            <BlogPage
+              allBlogs={allBlogs}
+              port={port}
+              refreshPage={refreshPage}
+            />
+          }
+        />
       </Routes>
     </BrowserRouter>
   );

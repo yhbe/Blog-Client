@@ -50,7 +50,7 @@ function BlogPage({ allBlogs, port, refreshPage }) {
   }
 
   const handleNavigation = () => {
-    navigate("/")
+    navigate("../Blog-Client");
   }
 
   return (

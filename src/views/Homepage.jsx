@@ -7,7 +7,7 @@ function Homepage({allBlogs}) {
   const navigate = useNavigate()
   
   const handleViewBlogClick = (id) => {
-    navigate(`/${id}`)
+    navigate(`../Blog-Client/${id}`);
   }
   
   const blogJSX = allBlogs?.map((blog) => createHomepageBlogJSX(blog, handleViewBlogClick)) || null;
