@@ -1,6 +1,7 @@
 # My Blog (Client)
 - [View client here](https://yhbe.github.io/Blog-Client/)
 - view blogs and add comments at Blog client
+![ezgif com-video-to-gif (1)](https://user-images.githubusercontent.com/101876022/225130923-041bf5a9-4a01-41ef-9bbb-be58781183be.gif)
 
 
 # My Blog (Content Management System) 
